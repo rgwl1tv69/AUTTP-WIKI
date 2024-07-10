@@ -10,5 +10,21 @@ let data = [
   ["WaterfallTV","transgender asriel pfp :shocked:"],
   ["jad", "boblox industries developer"],
   ["zornikal", "boblox industries idea giver"],
-  ["normal wuye", "boblox industries developer"]
+  ["normal wuye", "boblox industries developer"],
+  ["purpl", "person who coded the shitmemes.github.io website go visit there (not a paid promotion)"],
+  ["avek0", "skid"],
+  ["Snatchy", "BUILT LIKE A FERRIS WHEEL"]
 ]
+selected = 0
+function update() {
+  document.getElementById("content_wiki_title").innerHTML = data[selected][0]
+  document.getElementById("content_wiki_description").innerHTML = data[selected][1]
+}
+function next() {
+  selected = Math.min(selected + 1,data.length-1)
+  update()
+}
+function last() {
+  selected = Math.max(selected - 1,0)
+  update()
+}
