@@ -55,5 +55,5 @@ function roll() {
   if (luck > best_luck) {
     best_luck = luck
   }
-  document.getElementById("auttp_rng").innerHTML = "Roll (last time you got " + RNG[luck][0] + " with a 1/" + 3**luck + " rarity, best rarity this session: " + RNG[best_luck][0] + " 1/" + 3**bestluck + ")"
+  document.getElementById("auttp_rng").innerHTML = "Roll (last time you got " + RNG[luck][0] + " with a 1/" + 3**luck + " rarity, best rarity this session: " + RNG[best_luck][0] + " 1/" + 3**best_luck + ")"
 }
