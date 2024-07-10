@@ -30,6 +30,7 @@ let RNG = [
   ["sigma grindset",11],
 ]
 selected = 0
+best_luck = 0
 function update() {
   document.getElementById("content_wiki_title").innerHTML = data[selected][0]
   document.getElementById("content_wiki_description").innerHTML = data[selected][1]
@@ -44,12 +45,15 @@ function last() {
 }
 function roll() {
   let luck = 0
-  for (let i = 0; i < RNG.length; i++) {
+  for (let i = 1; i < RNG.length; i++) {
     if (Math.random() < 1/3) {
       luck = i
     } else {
       break
     }
   }
-  document.getElementById("auttp_rng").innerHTML = "Roll (last time you got " + RNG[luck][0] + " with a 1/" + 3**luck + " rarity.)"
+  if (luck > best_luck) {
+    best_luck = luck
+  }
+  document.getElementById("auttp_rng").innerHTML = "Roll (last time you got " + RNG[luck][0] + " with a 1/" + 3**luck + " rarity, best rarity this session: " + RNG[best_luck][0] + " 1/" + 3**bestluck + ")"
 }
