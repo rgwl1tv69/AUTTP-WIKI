@@ -47,6 +47,8 @@ function roll() {
   for (let i = 0; i < RNG.length; i++) {
     if (Math.random() < 1/3) {
       luck = i
+    } else {
+      break
     }
   }
   document.getElementById("auttp_rng").innerHTML = "Roll (last time you got " + RNG[luck][0] + " with a 1/" + 3**luck + " rarity.)"
